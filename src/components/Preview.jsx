@@ -1,30 +1,36 @@
+import { useFormData } from "../context/formContext";
+import { REGEX } from "../data/constants";
+
 export const Preview = () => {
+  const formData = useFormData()[0];
+  const { emailID, phone, pincode, state, address_1, address_2 } = formData;
+
   return (
     <div className="page-section">
-      <div className="section-header">Form Preview</div>
-      <div className="form-preview-element">
+      <div className="preview-header">Form Preview</div>
+      <div className="preview-element">
         <span>Personal email address</span>
-        <span>-</span>
+        {REGEX.EMAIL.test(emailID) ? <span>&#10003;</span> : <span>-</span>}
       </div>
-      <div className="form-preview-element">
+      <div className="preview-element">
         <span>Mobile number</span>
-        <span>-</span>
+        {REGEX.PHONE.test(phone) ? <span>&#10003;</span> : <span>-</span>}
       </div>
-      <div className="form-preview-element">
+      <div className="preview-element">
         <span>Address line 01</span>
-        <span>-</span>
+        {REGEX.ADDRESS.test(address_1) ? <span>&#10003;</span> : <span>-</span>}
       </div>
-      <div className="form-preview-element">
+      <div className="preview-element">
         <span>Address line 02</span>
-        <span>-</span>
+        {address_2 ? <span>&#10003;</span> : <span>-</span>}
       </div>
-      <div className="form-preview-element">
+      <div className="preview-element">
         <span>Pincode</span>
-        <span>-</span>
+        {REGEX.PINCODE.test(pincode) ? <span>&#10003;</span> : <span>-</span>}
       </div>
-      <div className="form-preview-element">
+      <div className="preview-element">
         <span>State</span>
-        <span>-</span>
+        {REGEX.STATE.test(state) ? <span>&#10003;</span> : <span>-</span>}
       </div>
     </div>
   );

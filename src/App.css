@@ -4,6 +4,7 @@
 .App {
   height: 100vh;
   width: 100vw;
+  box-sizing: border-box;
   display: grid;
   grid-template-rows: 1fr 10fr 1fr;
   gap: 10px;
@@ -28,9 +29,8 @@
 
 .app-body {
   display: grid;
-  padding: 0px 20px;
-  grid-template-columns:1fr 8fr 4fr;
-  min-width: 90%;
+  grid-template-columns:8% 62% 30%;
+  width: 100%;
   max-width: 1200px;
   min-height: 90%;
 }
@@ -69,7 +69,7 @@
   max-width: 500px;
 }
 
-.section-header {
+.preview-header {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,12 +83,26 @@
   background-color: white;
   padding: 10px 20px;
   margin: 10px;
-  min-height: 150px;
+  min-height: 160px;
   align-self: flex-start;
   justify-content: flex-start;
 }
 
-.form-preview-element {
+.page-section-header {
+  font: 1.2rem bolder;
+  padding: 10px 0;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #ECE9E5;
+}
+
+.preview-element {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.form-element {
   display: grid;
   width: 100%;
   grid-template-columns: 6fr 4fr;
@@ -113,16 +127,16 @@ input[type="checkbox"]:checked {
   background-color: #E06358;
 }
 
-input[type="range"] {
-appearance: none;
-background-color: #FFDE9E;
-width: 80%;
-height: 5px;
+input[type="checkbox"]:checked::after {
+  content: \2713;
+  position: absolute;
+  color: black;
 }
 
-input[type="range"]::-moz-progress-bar{
-  appearance: none;
-background-color: #D44C46;
+input[type="range"] {
+appearance: none;
+width: 85%;
+height: 5px;
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -131,6 +145,21 @@ input[type="range"]::-webkit-slider-thumb {
   width: 20px;
   border-radius: 50%;
   border: 5px solid #D44C46;
+}
+
+.range-slider {
+  display: grid;
+  gap:10px;
+  place-items: center;
+  width: 90%;
+  margin: 20px 0;
+}
+
+.range-slider-label {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(5,1fr);
 }
 
 .prev-button {

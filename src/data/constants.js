@@ -81,6 +81,7 @@ export const inputData = [
     id: 3,
     name: "address_1",
     label: "Address Line 1",
+    pattern: "^[a-zA-Z0-9,-./s]+$",
     type: "text",
     required: true,
   },
@@ -123,5 +124,7 @@ export const REGEX = {
   EMAIL: new RegExp(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{1,}$/),
   PINCODE: new RegExp(/^\d{6}$/),
   STATE: new RegExp(/^[a-zA-Z]{3,20}$/),
-  ADDRESS: new RegExp(/^[a-zA-Z0-9,-./]+$/),
+  ADDRESS: new RegExp(/^[a-zA-Z0-9,-./\s]+$/),
 };
+
+export const sliderData = ["₹1L", "₹2L", "₹3L", "₹4L", "₹5L"];

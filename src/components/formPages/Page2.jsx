@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useFormData } from "../../context/formContext";
 import UserIcon from "../../assets/Husband-Filled.png";
+import { sliderData } from "../../data/constants";
 
 export const Page2 = ({ setDisableSubmit }) => {
   const [formData, setFormData] = useFormData();
@@ -20,7 +21,7 @@ export const Page2 = ({ setDisableSubmit }) => {
         </p>
       </header>
       <section className="page-section">
-        <div>
+        <div className="page-section-header">
           <div>
             {planType?.planMembers} ({planType?.planType})
           </div>
@@ -38,22 +39,34 @@ export const Page2 = ({ setDisableSubmit }) => {
         </div>
         <div>
           <p>Sum insured of ₹20,00,000 with a deductible of ₹{amount}</p>
-          <input
-            type="range"
-            min={100000}
-            max={500000}
-            step={100000}
-            value={amount}
-            onChange={(e) =>
-              setFormData({ ...formData, amount: e.target.value })
-            }
-          />
+          <div className="range-slider">
+            <input
+              type="range"
+              min={100000}
+              max={500000}
+              step={100000}
+              style={{
+                background: `linear-gradient(to right,#D44C46 0%,#FFDE9E ${
+                  (amount / 500000) * 100
+                }%)`,
+              }}
+              value={amount}
+              onChange={(e) =>
+                setFormData({ ...formData, amount: e.target.value })
+              }
+            />
+            <div className="range-slider-label">
+              {sliderData.map((item, index) => (
+                <span key={index}>{item}</span>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
       <div className="checkbox-element">
         <input type="checkbox" onChange={(e) => setConsent(e.target.checked)} />
         <label>
-          I understand that this insurance will not be utilized until ₹{amount}
+          I understand that this insurance will not be utilized until ₹{amount}{" "}
           (deductible) is exhausted.
         </label>
       </div>

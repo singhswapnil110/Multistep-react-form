@@ -10,6 +10,7 @@ export const Page1 = ({ setDisableSubmit }) => {
 
   const optionsDataArray = optionsData.map((option, index) => (
     <div
+      key={index}
       className="plan-select-option"
       onClick={() => setFormData({ ...formData, planType: optionsData[index] })}
     >
@@ -37,10 +38,10 @@ export const Page1 = ({ setDisableSubmit }) => {
         </p>
       </header>
       <section className="page-section">
-        <h4>Plan details</h4>
+        <div className="page-section-header">Plan details</div>
         <div>
-          <label>
-            Your plan type
+          <div>
+            <p>Your plan type</p>
             <div
               className="plan-select"
               expanded={expanded.toString()}
@@ -55,11 +56,11 @@ export const Page1 = ({ setDisableSubmit }) => {
               )}
               <div className="plan-select-body">{optionsDataArray}</div>
             </div>
-          </label>
+          </div>
         </div>
       </section>
       <section className="page-section">
-        <div className="section-header">Basic details (required)</div>
+        <div className="page-section-header">Basic details (required)</div>
         <Form setDisableSubmit={setDisableSubmit} />
       </section>
     </div>

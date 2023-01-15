@@ -13,7 +13,11 @@ function App() {
   const progressArray = Array(4)
     .fill(0)
     .map((item, index) => (
-      <div className="header-item" id={index + 1 <= page ? "active" : ""} />
+      <div
+        className="header-item"
+        key={index}
+        id={index + 1 <= page ? "active" : ""}
+      />
     ));
 
   return (
@@ -23,7 +27,11 @@ function App() {
         <div className="app-body">
           <div>
             {page != 1 && page != 5 && (
-              <button className="prev-button" onClick={() => setPage(page - 1)}>
+              <button
+                className="prev-button"
+                onClick={() => setPage(page - 1)}
+                style={{ margin: "0 auto" }}
+              >
                 <img src={BackButtonIcon} />
               </button>
             )}

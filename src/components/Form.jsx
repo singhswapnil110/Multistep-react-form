@@ -18,14 +18,6 @@ export const Form = ({ setDisableSubmit }) => {
     )
       setDisableSubmit(false);
     else setDisableSubmit(true);
-
-    console.log(
-      REGEX.EMAIL.test(emailID),
-      REGEX.ADDRESS.test(address_1),
-      REGEX.PHONE.test(phone),
-      REGEX.PINCODE.test(pincode),
-      REGEX.STATE.test(state)
-    );
   });
 
   const updateFormValues = (e) => {
@@ -33,7 +25,7 @@ export const Form = ({ setDisableSubmit }) => {
   };
 
   return (
-    <div className="form-element">
+    <div className="form-body">
       {inputData.map((inputElement) => (
         <FormInput
           {...inputElement}
