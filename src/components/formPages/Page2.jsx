@@ -17,7 +17,14 @@ export const Page2 = ({ setDisableSubmit }) => {
         <h2>Select your deductible amount</h2>
         <p>
           Select the deductible amount for the policy (or policies) below.
-          <br /> <a href="">(what is a deductible?)</a>
+          <br />{" "}
+          <a
+            href="https://plumcare.freshdesk.com/support/solutions/articles/82000886968-what-is-deductible-"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            (What is a deductible?)
+          </a>
         </p>
       </header>
       <section className="page-section">

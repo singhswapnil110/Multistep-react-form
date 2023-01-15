@@ -17,7 +17,7 @@ export const Page4 = ({ isFinalPage }) => {
         </div>
         <div className="form-element">
           <span>Deductible Amount</span>
-          <b>{amount}</b>
+          <b>₹{amount}</b>
         </div>
         <div className="form-element">
           <span>Mobile Number</span>

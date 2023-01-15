@@ -1,7 +1,6 @@
 .form-body {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap:10px;
 }
 
 .form-input {
@@ -11,12 +10,14 @@
 }
 
 .form-input-element {
+    appearance: none;
     background-color: transparent;
     color: black;
     border: #8C98AB solid 2px;
     height: 40px;
     padding: 0 10px;
     font-size: 1.2em;
+    width: 80%;
     max-width: 300px;
     border-radius: 10px;
 }

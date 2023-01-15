@@ -1,11 +1,12 @@
 import { useState } from "react";
-import "./App.css";
+import { Page1 } from "./components/formPages/Page1";
+import { Page2 } from "./components/formPages/Page2";
 import { Page3 } from "./components/formPages/Page3";
 import { Page4 } from "./components/formPages/Page4";
 import { Preview } from "./components/Preview";
-import { Page2 } from "./components/formPages/Page2";
-import { Page1 } from "./components/formPages/Page1";
 import BackButtonIcon from "./assets/Vector.png";
+import GithubIcon from "./assets/github.png";
+import "./App.css";
 
 function App() {
   const [page, setPage] = useState(1);
@@ -50,6 +51,19 @@ function App() {
       </section>
       {page < 5 && (
         <footer className="app-footer">
+          <a
+            href="https://github.com/singhswapnil110/Multistep-react-form"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              textDecoration: "none",
+            }}
+          >
+            <button className="code-button">
+              View Code
+              <img src={GithubIcon} style={{ width: "30px" }} />
+            </button>
+          </a>
           <button
             className="submit-button"
             disabled={disableSubmit}

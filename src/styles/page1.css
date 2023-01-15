@@ -1,18 +1,23 @@
 .plan-select {
     display: flex;
-    flex-direction: column;
+    box-sizing: border-box;
+    position: relative;
     background-color: white;
-    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
     color: black;
     width: 400px;
     overflow: hidden;
     cursor: pointer;
     border-radius: 10px;
+    height: 50px;
     border: 1px solid black;
+    padding: 0 20px;
   }
   
   .plan-select-body {
-    width: 100%;
+    width: 400px;
+    background: white;
     overflow-y: auto;
   }
   
@@ -51,21 +56,15 @@
     gap: 10px;
   }
   
-  .plan-select[expanded="true"] {
+  .plan-select-body[expanded="true"] {
     height: 350px;
-    position:absolute;
+    position: absolute;
     transition: height 0.2s;
+    border: 1px solid black;
+    border-radius: 10px;
   }
   
-  .plan-select[expanded="false"] > .plan-select-body {
-  display: none;
-  }
-  
-  .plan-select[expanded="false"] {
-    height: 50px;
-  }
-
-  .plan-select-value {
-    padding: 0 10px;
+  .plan-select-body[expanded="false"]{
+  height: 0px;
   }
   

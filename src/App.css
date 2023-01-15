@@ -7,7 +7,6 @@
   box-sizing: border-box;
   display: grid;
   grid-template-rows: 1fr 10fr 1fr;
-  gap: 10px;
   background-color: #ECE9E5;
   color: #2D3D54;
 }
@@ -48,13 +47,25 @@
 .app-footer {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   padding: 20px;
   background-color: white;
 }
 
+.code-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: whitesmoke;
+  color: #2D3D54;
+  border: 1px solid #2D3D54;
+  width: 150px;
+  height: 50px;
+}
+
 .submit-button {
   width: 300px;
+  height: 50px;
   background: #E06358;
   color: white;
 }
@@ -117,6 +128,7 @@
 
 input[type="checkbox"] {
   appearance: none;
+  position: relative;
   height: 24px;
   width: 24px;
   border-radius: 4px;
@@ -128,28 +140,32 @@ input[type="checkbox"]:checked {
 }
 
 input[type="checkbox"]:checked::after {
-  content: \2713;
+  content: "\2713";
+  left: 4px;
   position: absolute;
-  color: black;
+  font-size: large;
+  text-align: center;
+  color: white;
 }
 
 input[type="range"] {
 appearance: none;
+cursor: pointer;
 width: 85%;
 height: 5px;
 }
 
 input[type="range"]::-webkit-slider-thumb {
   appearance: none;
-  height: 20px;
-  width: 20px;
+  height: 25px;
+  width: 25px;
   border-radius: 50%;
   border: 5px solid #D44C46;
 }
 
 .range-slider {
   display: grid;
-  gap:10px;
+  gap:15px;
   place-items: center;
   width: 90%;
   margin: 20px 0;

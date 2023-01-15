@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useFormData } from "../../context/formContext";
 import { optionsData } from "../../data/constants";
 import { Form } from "../Form";
+import DropArrowIcon from "../../assets/Vector.png";
 
 export const Page1 = ({ setDisableSubmit }) => {
   const [formData, setFormData] = useFormData();
@@ -42,11 +43,7 @@ export const Page1 = ({ setDisableSubmit }) => {
         <div>
           <div>
             <p>Your plan type</p>
-            <div
-              className="plan-select"
-              expanded={expanded.toString()}
-              onClick={() => setExpanded(!expanded)}
-            >
+            <div className="plan-select" onClick={() => setExpanded(!expanded)}>
               {planType ? (
                 <div className="plan-select-value">
                   <b>{planType.planName}</b> ({planType.planType})
@@ -54,7 +51,20 @@ export const Page1 = ({ setDisableSubmit }) => {
               ) : (
                 <div className="plan-select-value">Select your Plan</div>
               )}
-              <div className="plan-select-body">{optionsDataArray}</div>
+              <img
+                src={DropArrowIcon}
+                style={{
+                  width: "10px",
+                  transform: expanded ? "rotate(90deg)" : "rotate(270deg)",
+                }}
+              />
+            </div>
+            <div
+              className="plan-select-body"
+              expanded={expanded.toString()}
+              onClick={() => setExpanded(!expanded)}
+            >
+              {optionsDataArray}
             </div>
           </div>
         </div>
