@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useFormData } from "../../context/formContext";
-import UserIcon from "../../assets/Husband-filled.png";
+import UserIcon from "../../assets/Husband-Filled.png";
 
 export const Page2 = ({ setDisableSubmit }) => {
   const [formData, setFormData] = useFormData();
