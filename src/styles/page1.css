@@ -1,0 +1,71 @@
+.plan-select {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: center;
+    color: black;
+    width: 400px;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid black;
+  }
+  
+  .plan-select-body {
+    width: 100%;
+    overflow-y: auto;
+  }
+  
+  .plan-select-option {
+    box-sizing: border-box;
+    display: flex;
+    padding: 10px;
+    height: 60px;
+    width: 100%;
+    flex-direction: column;
+    margin: 20px 0px;
+    appearance: none;
+    cursor: pointer;
+    border-top: 1px solid #ECE9E5;
+  }
+  
+  .plan-select-option:hover > .plan-select-option-body {
+    background-color: #F2F0ED;
+  }
+  
+  .plan-select-option-header {
+    color: #55657D;
+    text-align: left;
+    font-size: 12px;
+  }
+  
+  .plan-select-option-body {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .plan-select-option-body-data {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .plan-select[expanded="true"] {
+    height: 350px;
+    position:absolute;
+    transition: height 0.2s;
+  }
+  
+  .plan-select[expanded="false"] > .plan-select-body {
+  display: none;
+  }
+  
+  .plan-select[expanded="false"] {
+    height: 50px;
+  }
+
+  .plan-select-value {
+    padding: 0 10px;
+  }
+  

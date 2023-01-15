@@ -1,0 +1,33 @@
+.form-element {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:10px;
+}
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+}
+
+.form-input-element {
+    background-color: transparent;
+    color: black;
+    border: #8C98AB solid 2px;
+    height: 40px;
+    padding: 0 10px;
+    font-size: 1.2em;
+    width: 300px;
+    border-radius: 10px;
+}
+
+.form-input-element-error {
+    visibility: hidden;
+    font-size: 12px;
+    color: #E06358;
+}
+
+.form-input-element[visited="true"]:invalid ~ div {
+    visibility: visible;
+}
+
