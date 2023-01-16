@@ -123,7 +123,7 @@ export const REGEX = {
   PHONE: new RegExp(/^\d{10}$/),
   EMAIL: new RegExp(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{1,}$/),
   PINCODE: new RegExp(/^\d{6}$/),
-  STATE: new RegExp(/^[a-zA-Z]{3,20}$/),
+  STATE: new RegExp(/^[a-zA-Z\s]{3,20}$/),
   ADDRESS: new RegExp(/^[a-zA-Z0-9,-./\s]+$/),
 };
 

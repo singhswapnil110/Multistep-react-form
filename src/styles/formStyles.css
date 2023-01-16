@@ -22,6 +22,10 @@
     border-radius: 10px;
 }
 
+.form-input-element:disabled {
+    background: silver;
+}
+
 .form-input-element[visited="true"]:invalid {
     border: red 2px solid;
 }
